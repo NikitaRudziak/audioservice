@@ -1,0 +1,22 @@
+
+.trackDescription {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 16px;
+  padding: 0px 10px;
+}
+.column {
+  flex-direction: column;
+  color: grey;
+}
+
+.play {
+  font-size: 21px;
+}
+
+.heart {
+  font-size: 18px;
+  padding-top: 5px;
+}
