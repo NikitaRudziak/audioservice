@@ -1,0 +1,30 @@
+.littleContainer {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.littleAlbom {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: whitesmoke;
+}
+
+.playlistDescription {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.playLittleName {
+    font-size: 22px;
+    color: rgb(170, 170, 170);
+}
+
+.trackLittleCount {
+    font-size: 18px;
+    color: rgb(170, 170, 170);
+}

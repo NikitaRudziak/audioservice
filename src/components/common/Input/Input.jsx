@@ -1,16 +1,22 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-export const Input = ({ type, placeholder }) => {
+import style from './Input.module.scss';
+
+export const Input = ({ name, type, placeholder, text }) => {
   render (
     console.log(placeholder)
   )
   return (
-    <div>
-      <input
-        type={type}
-        placeholder={placeholder}
-      />
+    <div className={style.Input}>
+      <label>
+        {text}
+        <input
+          name={name}
+          type={type}
+          placeholder={placeholder}
+        />
+      </label>
     </div>
   )
 };

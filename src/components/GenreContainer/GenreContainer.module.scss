@@ -1,0 +1,9 @@
+.genreContainer {
+    background-color: #282c34;
+    height: calc(100vh - 102px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}

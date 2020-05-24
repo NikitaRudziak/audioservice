@@ -1,0 +1,46 @@
+.playlistCardContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+}
+
+.forRem {
+    display: flex;
+    // flex-direction:
+    &:hover > div:last-child{
+        display: block;
+        text-align: center;
+        color: rgb(170, 170, 170);
+        font-size: 24px;
+        // background-color: #cc3131;
+    }
+}
+
+.albom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    font-size: 64px;
+    color: whitesmoke;
+}
+
+.playName {
+    font-size: 24px;
+    width: 140px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: rgb(170, 170, 170);
+}
+
+.trackCount {
+    color: rgb(170, 170, 170);
+}
+
+.remPlay {
+    display: none;
+
+}

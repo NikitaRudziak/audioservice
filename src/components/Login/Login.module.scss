@@ -1,9 +1,118 @@
 .Login {
-    text-align: center;
-    // height: calc(100% - 51px);
-    background-color: #282c34;
 
-    &__card {
-        background-color: whitesmoke;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - 102px);
+    background-color: #282c34;
+    font-family: 'Raleway', sans-serif;
+
+    &__box {
+        display: flex;
+	    background-color: white;
+	    align-items: center;
+        justify-content: center;
+        background-color: #282c34;
+  	    height: 100vh;
+    }
+    &__form {
+        min-width: 250px;
+  	    max-width: 400px;
+	    border-radius: 24px;
+	    padding: 15px;
+	    background-color: rgb(170, 170, 170);
+        h1 {
+            text-align: center;
+	        font-size: 2.5rem;
+	        margin-top: 35px;
+        }
+
+        input[type = "text"] {
+            margin-top: 30px;
+            width: 90%;
+	        border: none;
+	        border-radius: 24px;
+  	        font-size: 1rem;
+  	        font-family: 'Raleway', sans-seriff;
+	        background-color: #282c34;
+            padding: 15px;
+            color: white;
+        }
+
+        input[name = "email"] {
+            margin-top: 10px;
+            width: 90%;
+	        border: none;
+	        border-radius: 24px;
+  	        font-size: 1rem;
+  	        font-family: 'Raleway', sans-seriff;
+	        background-color: #282c34;
+            padding: 15px;
+            color: white;
+        }
+
+        input[type = "password"] {
+            margin-top: 10px;
+            width: 90%;
+	        border: none;
+	        border-radius: 24px;
+  	        font-size: 1rem;
+  	        font-family: 'Raleway', sans-seriff;
+	        background-color: #282c34;
+            padding: 15px;
+            color: white
+        }
+
+        input[type = "submit"] {
+            background-color:  #282c34;
+            width: 100%;
+            color: white;
+            border: none;
+            margin-top: 35px;
+            cursor: pointer;
+            padding: 10px;
+            font-family: 'Raleway', sans-seriff;
+            font-size: 1.3rem;
+            // font-weight: bold;
+            border-radius: 24px;
+            transition: 0.25s;
+            &:hover {
+                background-color: rgb(238, 90, 184);
+                color: black;
+            }
+        }
+    }
+
+    &__links {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    &__links > div:first-of-type {
+        margin-right: 5px;
+    }
+
+    &__links > div {
+        background-color: #282c34;
+        border-radius: 24px;
+        font-weight: 400;
+        color: white;
+        line-height: 12px;
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        text-decoration: none;
+        font-family: 'Raleway';
+        transition: 0.25s;
+    }
+
+    &__links > div:hover {
+        // opacity: 0.6;
+        background-color: rgb(238, 90, 184);
+        color: black;
     }
 }

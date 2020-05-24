@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux'
 import { loginReducer } from './loginReducer'
-// import { cardReducer } from './cardReducer'
+import { musicReducer } from './musicReducer'
+import { pageReducer } from './pageReducer'
 
 export default combineReducers({
-  loginReducer
-//   cardReducer
+  loginReducer,
+  musicReducer,
+  pageReducer
 })
+

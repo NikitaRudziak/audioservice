@@ -1,0 +1,57 @@
+.cabinetContainer {
+    display: flex;
+    height: calc(100vh - 102px);
+
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+        align-items: center;
+        width: 25%;
+        border-right: 1px solid grey;
+        background-color: #282c34;
+        // height: calc(100% - 102px);
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 75%;
+        background-color: #282c34;
+        overflow-y: auto;
+        // height: calc(100% - 102px);
+    }
+
+    .cabinetContainer .cabinetContainer__menu i {
+        color: white;
+    }
+}
+
+.plusBold {
+    color: rgb(170, 170, 170);
+    padding-top: 20px;
+    font-size: 24px;
+    font-weight: 300px;
+    &:hover {
+        // background-color: rgb(238, 90, 184);
+        color: rgb(238, 90, 184);
+    }
+}
+
+.circleButton {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+    color: rgb(170, 170, 170);
+    width: 13vh;
+    border-radius: 20px;
+    padding-bottom: 3px;
+    border: 1px solid rgb(170, 170, 170);
+}
+
+.circleButton:hover {
+    color: rgb(238, 90, 184);
+    border: 1px solid rgb(238, 90, 184);
+}

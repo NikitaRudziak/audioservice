@@ -1,9 +1,12 @@
 .container {
     background-color: #282c34;
-    height: calc(100vh - 51px);
+    height: calc(100vh - 102px);
+    overflow-y: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     color: white;
+    flex-wrap: wrap;
+    // padding: ;
 }

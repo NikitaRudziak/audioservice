@@ -1,9 +1,15 @@
 export const loginStore = {
-  userID: {
-    login: 'qwerty',
-    pass: '1',
-    isAuth: false
-  },
-  notLoginText: ''
+  user: {
+    nickName: '',
+    id: 0,
+    forTrash: 0,
+    name: '',
+    forSPT: '',
+    initModal: 'none',
+    trackID: null,
+    genreName: '',
+    initAttention: 'none',
+    mesType: '',
+    playTrash: ''
+  }
 }
-  

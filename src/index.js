@@ -6,9 +6,10 @@ import { Provider } from "react-redux";
 import './index.css';
 import App from './modules/App/App';
 import Login from './components/Login/Login';
+import GenrePage from './components/GenrePage/GenrePage';
 import reducers from '../src/redux/reducer';
 
-const testStore = createStore(reducers);
+const testStore = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <Provider store={testStore}>
@@ -17,6 +18,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/Home" component={App} />
         <Route exact path="/Login" component={Login} />
+        <Route exact path="/Genre" component={GenrePage} />
       </Switch>
     </Router>
   </Provider>,

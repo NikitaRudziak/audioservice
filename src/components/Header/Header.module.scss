@@ -7,3 +7,28 @@
   border-bottom: 1px solid grey;
   padding: 0px 30px;
 }
+
+.div {
+  display: inline-block;
+  position: relative;
+}
+
+.input {
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  transition: all 0.3s;
+  background-color: rgb(40,44,52);
+}
+
+.button {
+  width: 35px;
+  height: 35px;
+  background-color: rgb(40,44,52);
+  color: whitesmoke;
+  border: 0;
+  font-size: 18px;
+  padding-top: 5px;
+}

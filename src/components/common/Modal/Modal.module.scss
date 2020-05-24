@@ -1,0 +1,29 @@
+.modalContainer {
+    position: absolute;
+    top: 150px;
+    left: calc(50% - 175px);
+    flex-direction: column;
+    width: 350px;
+    padding-bottom: 10px;
+    z-index: 3;
+    background-color: rgb(60, 63, 63);
+    border-radius: 10px;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 5px;
+    padding-bottom: 20px;
+    color: whitesmoke;
+}
+
+.modalContent {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cross {
+    font-size: 26px;
+}
