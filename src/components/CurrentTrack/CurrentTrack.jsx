@@ -8,9 +8,26 @@ import style from './CurrentTrack.module.scss';
 
 export const CurrentTrack = ({ image, groupName, trackName, trackUrl, itemID, likeCount, playCount, setTrackAction }) => {
 
+  useEffect(() => {
+    let item = Object.keys(tracks.track).indexOf(itemID);
+    console.log(item)
+    if(item === 0) {
+      setIsDisL(true);
+    } else {
+      setIsDisL(false);
+    }
+    if(item === (Object.keys(tracks.track).length -1)) {
+      setIsDisR(true);
+    } else {
+      setIsDisR(false);
+    }
+  }, [itemID])
+
   // useEffect(() => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
+  const [isDisL, setIsDisL] = useState(false);
+  const [isDisR, setIsDisR] = useState(false);
 
   const [cgroupName, setCgroupName] = useState();
   const [ctrackName, setCtrackName] = useState();
@@ -25,6 +42,7 @@ export const CurrentTrack = ({ image, groupName, trackName, trackUrl, itemID, li
     setCtrackName(trackName);
     setCtrackUrl(trackUrl);
     setCitemID(itemID);
+    setIsPlaying(true);
     // axios.get('/music.json')
       // .then(response => {
       //   Object.keys(response.data).map(item => {
@@ -32,7 +50,7 @@ export const CurrentTrack = ({ image, groupName, trackName, trackUrl, itemID, li
       //   })
       // }setTrack({track: response.data}))
       // .catch(error => console.log(error));
-  }, [groupName])
+  }, [trackName])
 
   // console.log(cgroupName);
   // console.log(tracks)
@@ -52,10 +70,13 @@ export const CurrentTrack = ({ image, groupName, trackName, trackUrl, itemID, li
       .then(response =>
       setTrack({track: response.data}))
       .catch(error => console.log(error));
+    setIsPlaying(true);
   }, [])
 
   const next = () => {
+    setIsPlaying(true);
     let item = Object.keys(tracks.track).indexOf(itemID) + 1;
+    console.log(item);
     let obj ={
       image: tracks.track[Object.keys(tracks.track)[item]].image,
       groupName: tracks.track[Object.keys(tracks.track)[item]].groupName,
@@ -69,7 +90,9 @@ export const CurrentTrack = ({ image, groupName, trackName, trackUrl, itemID, li
   }
 
   const previous = () => {
+    setIsPlaying(true);
     let item = Object.keys(tracks.track).indexOf(itemID) - 1;
+    console.log(item);
     let obj ={
       image: tracks.track[Object.keys(tracks.track)[item]].image,
       groupName: tracks.track[Object.keys(tracks.track)[item]].groupName,
@@ -80,6 +103,7 @@ export const CurrentTrack = ({ image, groupName, trackName, trackUrl, itemID, li
       itemID: Object.keys(tracks.track)[item]
     }
     setTrackAction(obj);
+
     // setTrackAction(tracks.track[Object.keys(tracks.track)[item]]);
   }
 
@@ -104,7 +128,7 @@ export const CurrentTrack = ({ image, groupName, trackName, trackUrl, itemID, li
 
           { isVisible ? <div className={style.controlPlay}>
             <div onClick={previous} className={style.reverse}>
-              <i className="las la-forward"></i>
+              {isDisL ? <i style={{display: 'none'}} className="las la-forward"></i> : <i className="las la-forward"></i>}
             </div>
              <div
               // className={style.play}
@@ -118,7 +142,7 @@ export const CurrentTrack = ({ image, groupName, trackName, trackUrl, itemID, li
 
             </div>
             <div onClick={next}>
-              <i className="las la-forward"></i>
+            {isDisR ? <i style={{display: 'none'}} className="las la-forward"></i>:<i className="las la-forward"></i>}
             </div>
           </div> : null }
         <img className={style.currentTrackContainer__img} src={image} alt=""/>

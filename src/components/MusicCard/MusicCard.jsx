@@ -8,12 +8,22 @@ import TrackImage from '../common/TrackImage/TrackImage';
 import TrackDescription from '../TrackDescription/TrackDescription';
 
 import style from './MusicCard.module.scss';
+import { useEffect } from 'react';
 
-export const MusicCard = ({image, id, groupName, trackName, trackUrl, likeCount, itemID, playCount, forSPT, setTrackAction, setTrashAction, initModalAction, setTrackIDAction, }) => {
+export const MusicCard = ({image, id, groupName, trackName, trackUrl, likeCount, itemID, playCount, forSPT, setTrackAction, setTrashAction, initModalAction, setTrackIDAction, itemIDCheck}) => {
 
   const [isPlaying, setIsPlaying] = useState(false);
 
   const audio = useRef(null);
+
+  useEffect(() => {
+    if(itemID === itemIDCheck) {
+      setIsPlaying(true);
+    } else {
+      console.log(itemID, itemIDCheck)
+      setIsPlaying(false);
+    }
+  }, [itemIDCheck])
 
   const playTrack = (e) => {
     const audios = document.getElementsByTagName('audio');
@@ -42,8 +52,8 @@ export const MusicCard = ({image, id, groupName, trackName, trackUrl, likeCount,
       itemID:itemID
     }
     setTrackAction(track);
-    setIsPlaying(true);
-    console.log(itemID)
+
+    // console.log(itemID)
     axios.get(`/music/${itemID}/playCount.json`)
       .then(response => {
         const plays = response.data + 1;
@@ -113,6 +123,7 @@ export const MusicCard = ({image, id, groupName, trackName, trackUrl, likeCount,
 const mapStateToProps = state => {
   return {
     id: state.loginReducer.user.id,
+    itemIDCheck: state.musicReducer.track.itemID,
     forTrash: state.loginReducer.user.forTresh,
     forSPT: state.loginReducer.user.forSPT,
   }
