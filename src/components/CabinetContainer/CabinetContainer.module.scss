@@ -11,7 +11,6 @@
         width: 25%;
         border-right: 1px solid grey;
         background-color: #282c34;
-        // height: calc(100% - 102px);
     }
 
     &__main {
@@ -21,7 +20,6 @@
         width: 75%;
         background-color: #282c34;
         overflow-y: auto;
-        // height: calc(100% - 102px);
     }
 
     .cabinetContainer .cabinetContainer__menu i {
@@ -34,6 +32,7 @@
     padding-top: 20px;
     font-size: 24px;
     font-weight: 300px;
+    cursor: pointer;
     &:hover {
         // background-color: rgb(238, 90, 184);
         color: rgb(238, 90, 184);
@@ -41,6 +40,7 @@
 }
 
 .circleButton {
+    cursor: pointer;
     text-align: center;
     margin-top: 30px;
     font-size: 20px;

@@ -80,6 +80,21 @@
     transition-timing-function: line;
 }
 
+.tableContainer td:last-child:hover {
+    background-color: #cc3131;
+    color: whitesmoke;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: #881f1f -1px 1px, #881f1f -2px 2px, #881f1f -3px 3px, #881f1f -4px 4px, #881f1f -5px 5px, #881f1f -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
+}
+
 @media (max-width: 800px) {
     .tableContainer td:nth-child(4),
     .tableContainer th:nth-child(4) { display: none; }

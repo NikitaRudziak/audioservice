@@ -18,13 +18,22 @@ export const Login = ({changePageAction, setNickNameAction, setIDAction, nickNam
 
   const [signType, setSignType] = useState(true);
   const [data, setData] = useState({ user: [] });
-  const [checkId, setCheckId] = useState();
+  const [checkId, setCheckId] = useState(true);
 
   useEffect(()=> {
     axios.get('/users.json')
     .then(response => setData({user: response.data}))
     .catch(error => console.log(error));
   }, [])
+
+  useEffect(()=> {
+    console.log(signType)
+    if(signType) {
+    axios.get('/users.json')
+    .then(response => setData({user: response.data}))
+    .catch(error => console.log(error));
+    }
+  }, [signType])
 
   const handleChangeType = () => {
     setSignType(!signType);
@@ -42,29 +51,19 @@ export const Login = ({changePageAction, setNickNameAction, setIDAction, nickNam
             data.user[item].password === event.target.password.value) {
               setNickNameAction(data.user[item].nickName);
               setIDAction(item);
-              // initAttentionAction('none');
-              // setCheckId(true);
               goToCabinet();
         }
       });
     } else {
-      Object.keys(data.user).map(item => {
-        if (data.user[item].nickName === event.target.nickName.value) {
-          console.log(true);
-        } else {
-          const user = {
-            nickName: event.target.nickName.value,
-            password: event.target.password.value,
-            email: event.target.email.value,
-          }
-
-          axios.post('/users.json', user)
-            .then(response => console.log(response))
-            .catch(error => console.log(error));
-        }
-      });
+      const user = {
+        nickName: event.target.nickName.value,
+        password: event.target.password.value,
+        email: event.target.email.value,
+      }
+      axios.post('/users.json', user)
+        .then(response => {console.log(response); setSignType(!signType);})
+        .catch(error => console.log(error));
     }
-    // console.log(checkId);
     if(!checkId) {
       initAttentionAction('Username or password is incorrect', 'attention');
     }

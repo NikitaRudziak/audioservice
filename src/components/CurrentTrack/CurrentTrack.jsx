@@ -23,7 +23,6 @@ export const CurrentTrack = ({ image, groupName, trackName, trackUrl, itemID, li
     }
   }, [itemID])
 
-  // useEffect(() => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   const [isDisL, setIsDisL] = useState(false);
@@ -34,7 +33,7 @@ export const CurrentTrack = ({ image, groupName, trackName, trackUrl, itemID, li
   const [ctrackUrl, setCtrackUrl] = useState();
   const [citemID, setCitemID] = useState();
   const [tracks, setTrack] = useState({track: []});
-  // }, [trackName])
+
   const audio = useRef(null);
 
   useEffect(() => {
@@ -51,9 +50,6 @@ export const CurrentTrack = ({ image, groupName, trackName, trackUrl, itemID, li
       // }setTrack({track: response.data}))
       // .catch(error => console.log(error));
   }, [trackName])
-
-  // console.log(cgroupName);
-  // console.log(tracks)
 
   const playTrack = (e) => {
     audio.current.play();
@@ -103,14 +99,7 @@ export const CurrentTrack = ({ image, groupName, trackName, trackUrl, itemID, li
       itemID: Object.keys(tracks.track)[item]
     }
     setTrackAction(obj);
-
-    // setTrackAction(tracks.track[Object.keys(tracks.track)[item]]);
   }
-
-  // const qwe = () => {
-  //   audio.current.volume=audio.current.volume+document.getElementById("size").value;
-  // }
-
 
   useEffect(() => {
     audio.current.pause();

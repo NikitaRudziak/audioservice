@@ -7,10 +7,10 @@ export const Table = ({dataList, type}) => {
 
   let ind = 0;
 
-  // const deleteTrack = (item) => {
-  //   console.log(item)
-  //   // axios.delete(`/music/${item}.json`)
-  // }
+  const deleteTrack = (item) => {
+    console.log(item)
+    // axios.delete(`/music/${item}.json`)
+  }
 
   console.log(type)
 
@@ -23,6 +23,7 @@ export const Table = ({dataList, type}) => {
             <td>{ind}</td>
             <td>{dataList.user[item].nickName}</td>
             <td>{dataList.user[item].email}</td>
+            <td className={style.lastCell} onClick={(item) => deleteTrack(item)}>Delete</td>
           </tr>
         )
       }) : null}
@@ -33,6 +34,7 @@ export const Table = ({dataList, type}) => {
             <td>{ind}</td>
             <td>{dataList.track[item].groupName}</td>
             <td>{dataList.track[item].trackName}</td>
+            <td className={style.lastCell}>Delete</td>
             {/* <div onClick={deleteTrack(item)}><td>Delete</td></div>   */}
           </tr>
         )
