@@ -118,7 +118,7 @@ export const CabinetContainer = ({ nickName, setNickNameAction, changePageAction
         {page === 'addPlaylist' && <AddEntity handleClose={goToPlaylists} entity='playlist'/>}
         {page === 'track' &&
           <>
-            <div className={style.plusBold} onClick={goToAddTrack}>+Add new track</div>
+            {nickName === 'admin' ? <div className={style.plusBold} onClick={goToAddTrack}>+Add new track</div> : null }
             <MusicCardContainer check='false'/>
           </>}
         {page === 'playlists' &&

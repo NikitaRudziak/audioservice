@@ -69,25 +69,12 @@ export const Header = ({ changePageAction, user, setNameAction, setGenreNameActi
   }
 
   return (
-  //   <div className={style.hamburger_menu}>
-  //   <input className={style.menu_toggle} id="menu__toggle" type="checkbox" />
-  //   <label className={style.menu__btn} for="menu__toggle">
-  //     <span></span>
-  //   </label>
-
-  //   <ul className={style.menu__box}>
-  //     <li><a className={style.menu__item} href="#">Главная</a></li>
-	// 		<li><a className={style.menu__item} href="#">Проекты</a></li>
-	// 		<li><a className={style.menu__item} href="#">Команда</a></li>
-	// 		<li><a className={style.menu__item} href="#">Блог</a></li>
-	// 		<li><a className={style.menu__item} href="#">Контакты</a></li>
-  //   </ul>
-  // </div>
-  <div className={style.headerContainer}>
-    <div className={style.menuButton} onClick={showMenu}>
-      {isOpen ? <i className="las la-times"></i> : <i className="las la-bars"></i>}
-    </div>
-    <div className={style.menuSearch}>
+    <>
+    <div className={style.headerContainerFirst}>
+      <div className={style.menuButton} onClick={showMenu}>
+        {isOpen ? <i className="las la-times"></i> : <i className="las la-bars"></i>}
+      </div>
+      <div className={style.menuSearch}>
         <input placeholder="Search..." id="ti" className={style.input} type="text" list="cocktail" onChange={trackChoose}/>
         <datalist id="cocktail">
           {generateDatalist()}
@@ -96,31 +83,33 @@ export const Header = ({ changePageAction, user, setNameAction, setGenreNameActi
           <i className="las la-search"></i>
         </button>
       </div>
-    { isOpen ? <div className={style.menuLinks}>
-      <div className={style.menuLogo}>
-        <Logo/>
-      </div>
-      <div onClick={showMenu}>
-        <MenuContainer home={goToHome} genre={goToGenre} />
-      </div>
-      <div className={style.lButton} onClick={showMenu}>
-        {user ? <ElemMenu to={goToCabinet}>My music</ElemMenu> : <Button change={goToLogin} />}
-      </div>
-
-    </div>: null}
-    {/* <Logo/>
-    <MenuContainer home={goToHome} genre={goToGenre} />
-    <div className={style.div}>
-      <input placeholder="Search..." id="ti" className={style.input} type="text" list="cocktail" onChange={trackChoose}/>
-      <datalist id="cocktail">
-        {generateDatalist()}
-      </datalist>
-      <button className={style.button}>
-        <i className="las la-search"></i>
-      </button>
+      { isOpen ? <div className={style.menuLinks}>
+        <div className={style.menuLogo}>
+          <Logo/>
+        </div>
+        <div onClick={showMenu}>
+          <MenuContainer home={goToHome} genre={goToGenre} />
+        </div>
+        <div className={style.lButton} onClick={showMenu}>
+          {user ? <ElemMenu to={goToCabinet}>My music</ElemMenu> : <Button change={goToLogin} />}
+        </div>
+      </div>: null}
     </div>
-    {user ? <ElemMenu to={goToCabinet}>My music</ElemMenu> : <Button change={goToLogin} />} */}
-  </div>
+    <div className={style.headerContainer}>
+      <Logo/>
+      <MenuContainer home={goToHome} genre={goToGenre} />
+      <div className={style.div}>
+        <input placeholder="Search..." id="ti" className={style.input} type="text" list="cocktail" onChange={trackChoose}/>
+        <datalist id="cocktail">
+          {generateDatalist()}
+        </datalist>
+        <button className={style.button}>
+          <i className="las la-search"></i>
+        </button>
+      </div>
+      {user ? <ElemMenu to={goToCabinet}>My music</ElemMenu> : <Button change={goToLogin} />}
+    </div>
+  </>
 )};
 
 const mapStateToProps = state => ({
