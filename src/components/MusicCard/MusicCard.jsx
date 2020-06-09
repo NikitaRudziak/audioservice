@@ -53,7 +53,6 @@ export const MusicCard = ({image, id, groupName, trackName, trackUrl, likeCount,
     }
     setTrackAction(track);
 
-    // console.log(itemID)
     axios.get(`/music/${itemID}/playCount.json`)
       .then(response => {
         const plays = response.data + 1;

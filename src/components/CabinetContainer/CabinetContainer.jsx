@@ -100,6 +100,7 @@ export const CabinetContainer = ({ nickName, setNickNameAction, changePageAction
         <ElemMenu to={goToPlaylists}>Playlists</ElemMenu>
         {nickName === 'admin' ? <ElemMenu to={goToUsers}>Users</ElemMenu> : null}
         {nickName === 'admin' ? <ElemMenu to={goToList}>List of tracks</ElemMenu> : null}
+        {nickName === 'admin' ? <a href="https://console.firebase.google.com/u/0/project/somemusic2-3a7d9/database/somemusic2-3a7d9/data"><ElemMenu to={goToList}>Database</ElemMenu></a> : null}
         <div className={style.circleButton} onClick={logOut}>
           Log out
         </div>

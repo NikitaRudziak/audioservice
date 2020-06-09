@@ -2,10 +2,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  // justify-content: space-between;
   background-color: rgb(40,44,52);
   height: 50px;
   border-bottom: 1px solid grey;
-  padding: 0px 30px;
+
+  // padding-right: 10px;
+  // padding: 0px 30px;
+}
+
+@media screen and (max-width: 600px) {
+  // body { background: #fc0; }
+  .headerContainer {
+    padding-right: 70px;
+  }
 }
 
 .div {
@@ -31,4 +41,31 @@
   border: 0;
   font-size: 18px;
   padding-top: 5px;
+}
+
+.menuButton {
+  color: grey;
+  cursor: pointer;
+  font-size: 34px;
+  margin-left: 10px;
+}
+
+.menuLinks {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #282c34;
+  height: calc(100vh - 100px);
+  width: 50%;
+}
+
+.menuLogo {
+  margin: 15px 0;
+}
+
+.lButton {
+  padding-top: 25px;
+  // margin-right: 100px;
 }

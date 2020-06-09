@@ -3,8 +3,19 @@
     font-family: 'Special Elite', cursive;
     font-size: 18px;
     padding: 10px;
+    white-space: nowrap
 }
 
 .element:hover {
     color: rgb(238, 90, 184);
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+    .element {
+        font-size: 20px;
+    }
 }

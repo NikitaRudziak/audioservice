@@ -14,3 +14,10 @@
         color: rgb(238, 90, 184);
     }
 }
+
+@media screen and (max-width: 600px) {
+    // body { background: #fc0; }
+    .genreCard {
+      padding-bottom: 50px;
+    }
+  }

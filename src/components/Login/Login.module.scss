@@ -117,3 +117,19 @@
         color: black;
     }
 }
+
+@media screen and (max-width: 600px) {
+    // body { background: #fc0; }
+    .Login__box {
+        background-color: rgb(170, 170, 170);
+    //   padding-bottom: 50px;
+    }
+    .Login {
+        &__form {
+            h1 {
+                font-size: 2.5rem;
+                margin-top: -75px;
+            }
+        }
+    }
+  }

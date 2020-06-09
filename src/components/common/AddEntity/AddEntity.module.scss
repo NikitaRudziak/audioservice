@@ -135,3 +135,20 @@
         opacity: 0.6;
     }
 }
+
+@media screen and (max-width: 600px) {
+    // body { background: #fc0; }
+    .AddEntity {
+        width: 100%;
+        background-color: rgb(170, 170, 170);
+        &__box {
+            background-color: rgb(170, 170, 170);
+
+        }
+        .AddTitle {
+            // display: flex;
+            // justify-content: space-between;
+            margin: -50px 0 20px 10px;
+        }
+    }
+  }
