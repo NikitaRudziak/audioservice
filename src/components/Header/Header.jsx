@@ -11,7 +11,7 @@ import { ElemMenu } from '../common/ElemMenu';
 
 import style from './Header.module.scss';
 
-export const Header = ({ changePageAction, user, setNameAction, setGenreNameAction }) => {
+export const Header = ({ changePageAction, user, setNameAction, setGenreNameAction, page }) => {
   const [data, setData] = useState({ track: [] });
   const [isOpen, setIsOpen] = useState(false);
   const [inputOpen, setInputOpen] = useState(false);
@@ -59,6 +59,7 @@ export const Header = ({ changePageAction, user, setNameAction, setGenreNameActi
     for (var i = 0; i < opts.length; i++) {
       if (opts[i].value === val) {
         setNameAction(opts[i].value);
+        setInputOpen(false)
         break;
       }
     }
@@ -84,7 +85,7 @@ export const Header = ({ changePageAction, user, setNameAction, setGenreNameActi
           <Logo/>
         </div> : null
       }
-      <div className={style.menuSearch}>
+      { page === 'HOME' ? <div className={style.menuSearch}>
         { inputOpen ?
           <div className={style.inputOpen}>
             <input placeholder="Search..." id="ti" className={style.input} type="text" list="cocktail" onChange={trackChoose}/>
@@ -93,10 +94,12 @@ export const Header = ({ changePageAction, user, setNameAction, setGenreNameActi
             </datalist>
           </div> : null
         }
-        <button className={style.button} onClick={showInput}>
+        { !inputOpen ? <button className={style.button} onClick={showInput}>
           <i className="las la-search"></i>
-        </button>
-      </div>
+        </button> : null
+        }
+      </div> : <div className={style.fake}><i className="las la-times"></i></div>
+      }
       { isOpen ? <div className={style.menuLinks}>
 
         <div onClick={showMenu}>
@@ -125,7 +128,8 @@ export const Header = ({ changePageAction, user, setNameAction, setGenreNameActi
 )};
 
 const mapStateToProps = state => ({
-  user: state.loginReducer.user.nickName
+  user: state.loginReducer.user.nickName,
+  page: state.pageReducer.page.name,
 });
 
 const mapDispatchToProps = {

@@ -50,14 +50,18 @@
   flex-direction: column;
   align-items: center;
   background-color: #282c34;
-  height: calc(100vh - 105px);
-  margin-top: 5px;
+  height: calc(100vh - 100px);
+  // margin-top: 5px;
   width: 50%;
 }
 
 .menuLogo {
   margin-left: 15px;
 }
+
+// .menuSearch {
+//   padding-left: 50%;
+// }
 
 .lButton {
   padding-top: 25px;
@@ -67,6 +71,10 @@
 // .inputOpen {
 //   display: none;
 // }
+.fake {
+  font-size: 18px;
+  visibility: hidden;
+}
 
 @media screen and (max-width: 600px) {
   // body { background: #fc0; }
@@ -78,7 +86,7 @@
     background-color: rgb(40,44,52);
     height: 50px;
     border-bottom: 1px solid grey;
-    // padding-top: ;
+    // padding-top: -3px;
     // padding-right: 10px;
     // padding: 0px 30px;
   }
@@ -90,6 +98,9 @@
   }
   .inputOpen{
     display: inline-block;
-
+    padding-right: 100px;
+  }
+  .bgColor {
+    background-color: rgb(238, 90, 184);
   }
 }

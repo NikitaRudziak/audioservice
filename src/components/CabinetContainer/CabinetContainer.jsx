@@ -95,12 +95,16 @@ export const CabinetContainer = ({ nickName, setNickNameAction, changePageAction
   return(
     <div className={style.cabinetContainer}>
       <div className={style.cabinetContainer__menu}>
-        <ElemMenu to={goToTrackList}>Tracks </ElemMenu>
+        <div className={style.bgColor}>
+          <ElemMenu to={goToTrackList}>Tracks </ElemMenu>
+        </div>
         {/* <ElemMenu to={goToArtists}>Artists</ElemMenu> */}
-        <ElemMenu to={goToPlaylists}>Playlists</ElemMenu>
-        {nickName === 'admin' ? <ElemMenu to={goToUsers}>Users</ElemMenu> : null}
-        {nickName === 'admin' ? <ElemMenu to={goToList}>List of tracks</ElemMenu> : null}
-        {nickName === 'admin' ? <a href="https://console.firebase.google.com/u/0/project/somemusic2-3a7d9/database/somemusic2-3a7d9/data"><ElemMenu to={goToList}>Database</ElemMenu></a> : null}
+        <div className={style.bgColor}>
+          <ElemMenu to={goToPlaylists}>Playlists</ElemMenu>
+        </div>
+        {nickName === 'admin' ? <div className={style.bgColor}><ElemMenu to={goToUsers}>Users</ElemMenu></div> : null}
+        {nickName === 'admin' ? <div className={style.bgColor}><ElemMenu to={goToList}>List of tracks</ElemMenu></div> : null}
+        {nickName === 'admin' ? <div className={style.bgColor}><a href="https://console.firebase.google.com/u/0/project/somemusic2-3a7d9/database/somemusic2-3a7d9/data"><ElemMenu to={goToList}>Database</ElemMenu></a></div> : null}
         <div className={style.circleButton} onClick={logOut}>
           Log out
         </div>
