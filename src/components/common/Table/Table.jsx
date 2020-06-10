@@ -9,7 +9,6 @@ export const Table = ({dataList, type}) => {
 
   const deleteTrack = (item) => {
     console.log(item)
-    // axios.delete(`/music/${item}.json`)
   }
 
   console.log(type)
@@ -35,7 +34,7 @@ export const Table = ({dataList, type}) => {
             <td>{dataList.track[item].groupName}</td>
             <td>{dataList.track[item].trackName}</td>
             <td className={style.lastCell}>Delete</td>
-            {/* <div onClick={deleteTrack(item)}><td>Delete</td></div>   */}
+            {/* <div onClick={deleteTrack(item)}><td>Delete</td></div> */}
           </tr>
         )
       })}

@@ -91,7 +91,7 @@ export const Login = ({changePageAction, setNickNameAction, setIDAction, nickNam
           <input type="password" name="password" placeholder="Password" required />
           <input type="submit" name="Login" value="Login" />
           <div className={style.Login__links}>
-            <div>Forgot Password</div>
+            {/* <div>Forgot Password</div> */}
             {signType ? <div onClick={handleChangeType}>Sign Up</div> : <div onClick={handleChangeType}>Sign in</div>}
           </div>
         </form>

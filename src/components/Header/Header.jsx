@@ -14,6 +14,7 @@ import style from './Header.module.scss';
 export const Header = ({ changePageAction, user, setNameAction, setGenreNameAction }) => {
   const [data, setData] = useState({ track: [] });
   const [isOpen, setIsOpen] = useState(false);
+  const [inputOpen, setInputOpen] = useState(false);
 
   useEffect(() => {
     console.log(user)
@@ -68,25 +69,36 @@ export const Header = ({ changePageAction, user, setNameAction, setGenreNameActi
     setIsOpen(!isOpen);
   }
 
+  const showInput = () => {
+    setInputOpen(!inputOpen);
+  }
+
   return (
     <>
     <div className={style.headerContainerFirst}>
       <div className={style.menuButton} onClick={showMenu}>
         {isOpen ? <i className="las la-times"></i> : <i className="las la-bars"></i>}
       </div>
+      { !inputOpen ?
+        <div className={style.menuLogo}>
+          <Logo/>
+        </div> : null
+      }
       <div className={style.menuSearch}>
-        <input placeholder="Search..." id="ti" className={style.input} type="text" list="cocktail" onChange={trackChoose}/>
-        <datalist id="cocktail">
-          {generateDatalist()}
-        </datalist>
-        <button className={style.button}>
+        { inputOpen ?
+          <div className={style.inputOpen}>
+            <input placeholder="Search..." id="ti" className={style.input} type="text" list="cocktail" onChange={trackChoose}/>
+            <datalist id="cocktail">
+              {generateDatalist()}
+            </datalist>
+          </div> : null
+        }
+        <button className={style.button} onClick={showInput}>
           <i className="las la-search"></i>
         </button>
       </div>
       { isOpen ? <div className={style.menuLinks}>
-        <div className={style.menuLogo}>
-          <Logo/>
-        </div>
+
         <div onClick={showMenu}>
           <MenuContainer home={goToHome} genre={goToGenre} />
         </div>

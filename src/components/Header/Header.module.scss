@@ -11,25 +11,6 @@
   padding: 0px 20px;
 }
 
-@media screen and (max-width: 600px) {
-  // body { background: #fc0; }
-  .headerContainerFirst {
-    padding-right: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgb(40,44,52);
-    height: 50px;
-    border-bottom: 1px solid grey;
-    // padding-top: ;
-    // padding-right: 10px;
-    // padding: 0px 30px;
-  }
-  .headerContainer {
-    display: none;
-  }
-}
-
 .div {
   display: inline-block;
   position: relative;
@@ -52,7 +33,7 @@
   color: whitesmoke;
   border: 0;
   font-size: 18px;
-  padding-top: 5px;
+  // padding-right: 15px;
 }
 
 .menuButton {
@@ -75,10 +56,40 @@
 }
 
 .menuLogo {
-  margin: 15px 0;
+  margin-left: 15px;
 }
 
 .lButton {
   padding-top: 25px;
   // margin-right: 100px;
+}
+
+// .inputOpen {
+//   display: none;
+// }
+
+@media screen and (max-width: 600px) {
+  // body { background: #fc0; }
+  .headerContainerFirst {
+    // padding-right: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(40,44,52);
+    height: 50px;
+    border-bottom: 1px solid grey;
+    // padding-top: ;
+    // padding-right: 10px;
+    // padding: 0px 30px;
+  }
+  .headerContainer {
+    display: none;
+  }
+  .button {
+    font-size: 24px;
+  }
+  .inputOpen{
+    display: inline-block;
+
+  }
 }
