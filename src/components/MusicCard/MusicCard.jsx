@@ -55,8 +55,9 @@ export const MusicCard = ({image, id, groupName, trackName, trackUrl, likeCount,
 
     axios.get(`/music/${itemID}/playCount.json`)
       .then(response => {
-        const plays = response.data + 1;
-        axios.put(`/music/${itemID}/playCount.json`, plays);
+      // console.log(response.data)
+        // const plays = response.data + 1;
+        // axios.put(`/music/${itemID}/playCount.json`, plays);
     })
 
   }

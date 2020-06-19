@@ -52,7 +52,9 @@ export const AddEntity = ({entity, id, handleClose, initAttentionAction}) => {
         groupName: event.target.groupName.value,
         image: event.target.image.value,
         trackUrl: event.target.trackUrl.value,
-        genre: event.target.genre.value
+        genre: event.target.genre.value,
+        likeCount: 0,
+        playCount: 0
       }
 
       axios.post('/music.json', track)
