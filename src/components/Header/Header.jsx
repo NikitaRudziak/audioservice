@@ -30,6 +30,8 @@ export const Header = ({ changePageAction, user, setNameAction, setGenreNameActi
 
   const goToHome = () => {
     changePageAction('HOME');
+    document.getElementById('ti').value = "";
+    setNameAction('');
     setGenreNameAction('');
   }
 

@@ -101,7 +101,7 @@ export const MusicCard = ({image, id, groupName, trackName, trackUrl, likeCount,
   return(
     <div className={style.card}>
 
-      <TrackImage image={image} alt='Чорт' handleAdd={addToPlaylist} />
+      <TrackImage image={image} alt='image' handleAdd={addToPlaylist} />
       <TrackDescription
         groupName={groupName}
         trackName={trackName}
